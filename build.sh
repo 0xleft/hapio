@@ -1,0 +1,1 @@
+sudo docker run --rm -v "$(pwd)":/app -w /app arm64v8/ubuntu ./build-script.sh

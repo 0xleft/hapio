@@ -10,6 +10,9 @@ cabal-dev
 *.dyn_hi
 .hpc
 .hsenv
+*.gz
+bin/*
+.wget-hsts*
 .cabal-sandbox/
 cabal.sandbox.config
 *.prof

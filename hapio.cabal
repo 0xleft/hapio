@@ -13,6 +13,7 @@ author:         plusleft
 maintainer:     example@example.com
 copyright:      2023 plusleft
 license:        MIT
+license-file:   LICENSE
 build-type:     Simple
 extra-source-files:
     README.md
