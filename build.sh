@@ -1,1 +1,1 @@
-sudo docker run --rm -v "$(pwd)":/app -w /app arm64v8/ubuntu ./build-script.sh
+sudo docker run --rm -v /home/$(whoami)/.stack/snapshots/aarch64-linux:/root/.stack/snapshots/aarch64-linux -v "$(pwd)":/app -w /app --name arm-stack plusleft/arm-stack-build:latest stack build --allow-different-user --skip-ghc-check --system-ghc $@

@@ -15,7 +15,6 @@ main = do
     exportPin 17
     setDirection 17 OUT
     setValue 17 1
-    threadDelay 2000000
     setValue 17 0
     unexportPin 17
 
