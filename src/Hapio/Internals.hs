@@ -6,6 +6,12 @@ module Hapio.Internals (
     setDirection,
     setValue,
     getValue,
+    exportPwm,
+    unexportPwm,
+    setPwmPeriod,
+    setPwmDutyCycle,
+    enablePwm,
+    disablePwm
 ) where
 
 import System.Directory
@@ -52,3 +58,33 @@ getValue pin = do
     let path = "/sys/class/gpio/gpio" ++ show pin ++ "/value"
     value <- readFile path
     return (read value :: Int)
+
+exportPwm :: IO ()
+exportPwm = do
+    let path = "/sys/class/pwm/pwmchip0/export"
+    writeFile path "1"
+
+unexportPwm :: IO ()
+unexportPwm = do
+    let path = "/sys/class/pwm/pwmchip0/unexport"
+    writeFile path "1"
+
+setPwmPeriod :: Int -> IO ()
+setPwmPeriod period = do
+    let path = "/sys/class/pwm/pwmchip0/pwm1/period"
+    writeFile path (show period)
+
+setPwmDutyCycle :: Int -> IO ()
+setPwmDutyCycle dutyCycle = do
+    let path = "/sys/class/pwm/pwmchip0/pwm1/duty_cycle"
+    writeFile path (show dutyCycle)
+
+enablePwm :: IO ()
+enablePwm = do
+    let path = "/sys/class/pwm/pwmchip0/pwm1/enable"
+    writeFile path "1"
+
+disablePwm :: IO ()
+disablePwm = do
+    let path = "/sys/class/pwm/pwmchip0/pwm1/enable"
+    writeFile path "0"
