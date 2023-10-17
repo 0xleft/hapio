@@ -1,7 +1,7 @@
 module Hapio (
     turnOnFor,
     turnOn,
-    turnOff
+    turnOff,
 ) where
 
 import Hapio.Internals
@@ -26,4 +26,3 @@ turnOff :: Int -> IO ()
 turnOff pin = do
     setValue pin 0
     unexportPin pin
-
