@@ -1,3 +1,11 @@
+# Hapio
+
+Manage raspberry pi GPIO pins with Haskell very minimalistic library.
+
+# Examples
+
+You can find examples in [examples](examples) folder.
+
 # Build execs for raspberry
 
 ## Set up
